@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Verbs_5th</title>
+
+    <meta http-equiv="Content-Type" content="text/html; CHARSET=Windows-1252">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Author" content="Made with QuizFaber 4.0.20">
+    <meta name="generator" content="QuizFaber 4.0.20">
+    <meta name="keywords" content="quiz">
+    <meta name="description" content="Irregular Verbs - 5th PE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="../scripts/error.js"></script>
+    <script src="../scripts/definitions.js"></script>
+    <script src="../scripts/security.js"></script>
+    <script src="../scripts/cookie.js"></script>
+    <script src="../scripts/storage.js"></script>
+    <script src="../scripts/time.js"></script>
+    <script src="../scripts/valuation.js"></script>
+    <script src="../scripts/navigation.js"></script>
+    <script src="../scripts/utility.js"></script>
+    <script src="../scripts/engine.js"></script>
+    <script src="../scripts/view.js"></script>
+    <script src="../scripts/matching.js"></script>
+    <script src="../scripts/lightbox.js"></script>
+
+    <script src="../scripts/page.js"></script>
+    
+
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/layout.css">
+    <link rel="stylesheet" href="../styles/lightbox.css">
+    
+
+</head>
+<body>
+
+    <div class="header" id="idTopBar">
+        <div class="row">
+            <div class="col-sm-3 col-xs-12 text-left text-xs-center"><span class="label_topbar_clock" id="idClock"></span></div>
+            <div class="col-sm-2 col-xs-3 text-center text-xs-left" id="idDivCorrectAnswer"><span class="label_topbar nowrap">correcto</span> <span id="idCorrectAnswers" class="badge"></span> </div>
+            <div class="col-sm-2 col-xs-3 text-center text-xs-left" id="idDivWrongAnswer"><span class="label_topbar nowrap">equivocado</span> <span id="idWrongAnswers" class="badge"></span> </div>
+            <div class="col-sm-2 col-xs-3 text-center text-xs-left" id="idDivToBeAnswered"><span class="label_topbar nowrap">debe responder</span> <span id="idToBeAnswered" class="badge"></span> </div>
+            <div class="col-sm-3 col-xs-3 text-right">
+                <button id="idBtnPrintQuiz" type="button" class="btn btn-primary" onclick="onPrintQuizButtonClick()" style="display:none">GRABAR</button>
+                <button id="idBtnGoToResults" type="button" class="btn btn-primary" onclick="onQuizResultsButtonClick()" style="display:none">Resultado del test</button>
+                <button id="idBtnRetire" type="button" class="btn btn-warning" onclick="onAbandonButtonClick()" style="display:none">Salir</button>
+            </div>
+            </div>
+        </div>
+
+    <div class="container">
+
+        <div class="jumbotron" id="idQuizHeader">
+            <h1 id="idQuizTitle"></h1>
+            <p class="lead">
+                <span id="idQuizDescription"></span>
+            <p id="idQuizProfile" style="display:none">
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#idQuizProfileInfo">Más información</button>
+                <div id="idQuizProfileInfo" class="collapse">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Autor</strong><span class="pull-right" id="idAuthor"></span></li>
+                        <li class="list-group-item"><strong>Argumento</strong><span class="pull-right" id="idArgument"></span></li>
+                        <li class="list-group-item"><strong>Empresa</strong><span class="pull-right" id="idCompany"></span></li>
+                        <li class="list-group-item"><strong>Fecha</strong><span class="pull-right" id="idDate"></span></li>
+                    </ul>
+                </div>
+            </p>
+            </p>
+        </div>
+
+        <div class="panel panel-default" id="idQuizResultsPanelTop" style="display:none">
+            <div class="panel-body">
+                <button type="button" class="btn btn-primary center-block" onclick="onQuizResultsButtonClick()">Resultado del test</button>
+            </div>
+        </div>
+
+        <div class="panel panel-default" id="idVerifyPanelTop" style="display:none">
+            <div class="panel-body">
+                <span></span>
+                <button type="button" class="btn btn-primary pull-right" onclick="onVerifyButtonClick()">CHECK</button>
+            </div>
+        </div>
+
+        <div class="well" id="idSectionTextIntro" style="display:none"><span><p style="text-align:center;"><b><span style="background-color:#FFFFFF;font-family:Tahoma;font-size:14pt;">F&#237;jate bien en lo que escribes antes de dar por terminado el examen</span></b></p>    <p style="text-align:center;"><b><span style="background-color:#FFFFFF;font-family:Tahoma;font-size:14pt;">---------------------------------</span></b></p>    <p style="text-align:center;"><b><span style="background-color:#FFFFFF;font-family:Tahoma;font-size:14pt;">Si un verbo tiene m&#225;s de un significado</span></b></p>    <p style="text-align:center;"><b><span style="background-color:#FFFFFF;font-family:Tahoma;font-size:14pt;">ESCRIBE SOLAMENTE UNO DE ELLOS</span></b></p></span></div>
+
+        <div class="panel panel-primary" id="idPanel1" ><div class="panel-heading" ><b>pregunta 1</b></div><div class="panel-body" ><div id="divSuccess0" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail0" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect0" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo0" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning0" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg0" /></div>
+<div id="divError0" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg0" /></div>
+<div id="divQuestionFeedback0" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;"><input id="idGap1_0" type="text" size="10" /> - BUY - <input id="idGap1_1" type="text" size="10" /></span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel2" ><div class="panel-heading" ><b>pregunta 2</b></div><div class="panel-body" ><div id="divSuccess1" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail1" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect1" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo1" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning1" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg1" /></div>
+<div id="divError1" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg1" /></div>
+<div id="divQuestionFeedback1" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">PENSAR, OPINAR - <input id="idGap2_0" type="text" size="10" /> - <input id="idGap2_1" type="text" size="10" /></span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel3" ><div class="panel-heading" ><b>pregunta 3</b></div><div class="panel-body" ><div id="divSuccess2" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail2" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect2" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo2" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning2" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg2" /></div>
+<div id="divError2" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg2" /></div>
+<div id="divQuestionFeedback2" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;"><input id="idGap3_0" type="text" size="10" /> - <input id="idGap3_1" type="text" size="10" /> - RAN</span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel4" ><div class="panel-heading" ><b>pregunta 4</b></div><div class="panel-body" ><div id="divSuccess3" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail3" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect3" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo3" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning3" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg3" /></div>
+<div id="divError3" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg3" /></div>
+<div id="divQuestionFeedback3" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">VENIR - <input id="idGap4_0" type="text" size="10" /> - <input id="idGap4_1" type="text" size="10" /></span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel5" ><div class="panel-heading" ><b>pregunta 5</b></div><div class="panel-body" ><div id="divSuccess4" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail4" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect4" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo4" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning4" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg4" /></div>
+<div id="divError4" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg4" /></div>
+<div id="divQuestionFeedback4" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;"><input id="idGap5_0" type="text" size="10" /> - DRIVE - <input id="idGap5_1" type="text" size="10" /></span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel6" ><div class="panel-heading" ><b>pregunta 6</b></div><div class="panel-body" ><div id="divSuccess5" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail5" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect5" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo5" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning5" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg5" /></div>
+<div id="divError5" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg5" /></div>
+<div id="divQuestionFeedback5" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">COMER - <input id="idGap6_0" type="text" size="10" /> - <input id="idGap6_1" type="text" size="10" /></span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel7" ><div class="panel-heading" ><b>pregunta 7</b></div><div class="panel-body" ><div id="divSuccess6" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail6" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect6" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo6" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning6" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg6" /></div>
+<div id="divError6" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg6" /></div>
+<div id="divQuestionFeedback6" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;"><input id="idGap7_0" type="text" size="10" /> - FORGET - <input id="idGap7_1" type="text" size="10" /></span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel8" ><div class="panel-heading" ><b>pregunta 8</b></div><div class="panel-body" ><div id="divSuccess7" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail7" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect7" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo7" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning7" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg7" /></div>
+<div id="divError7" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg7" /></div>
+<div id="divQuestionFeedback7" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">TENER, TOMAR - <input id="idGap8_0" type="text" size="10" /> - <input id="idGap8_1" type="text" size="10" /></span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel9" ><div class="panel-heading" ><b>pregunta 9</b></div><div class="panel-body" ><div id="divSuccess8" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail8" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect8" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo8" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning8" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg8" /></div>
+<div id="divError8" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg8" /></div>
+<div id="divQuestionFeedback8" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">SABER, CONOCER - <input id="idGap9_0" type="text" size="10" /> - <input id="idGap9_1" type="text" size="10" /></span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel10" ><div class="panel-heading" ><b>pregunta 10</b></div><div class="panel-body" ><div id="divSuccess9" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail9" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect9" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo9" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning9" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg9" /></div>
+<div id="divError9" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg9" /></div>
+<div id="divQuestionFeedback9" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">HACER, FABRICAR - <input id="idGap10_0" type="text" size="10" /> - <input id="idGap10_1" type="text" size="10" /></span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel11" ><div class="panel-heading" ><b>pregunta 11</b></div><div class="panel-body" ><div id="divSuccess10" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail10" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect10" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo10" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning10" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg10" /></div>
+<div id="divError10" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg10" /></div>
+<div id="divQuestionFeedback10" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;"><input id="idGap11_0" type="text" size="10" /> - SAY - <input id="idGap11_1" type="text" size="10" /></span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel12" ><div class="panel-heading" ><b>pregunta 12</b></div><div class="panel-body" ><div id="divSuccess11" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail11" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect11" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo11" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning11" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg11" /></div>
+<div id="divError11" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg11" /></div>
+<div id="divQuestionFeedback11" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">ENTENDER, COMPRENDER - <input id="idGap12_0" type="text" size="10" /> - <input id="idGap12_1" type="text" size="10" /></span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel13" ><div class="panel-heading" ><b>pregunta 13</b></div><div class="panel-body" ><div id="divSuccess12" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail12" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect12" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo12" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning12" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg12" /></div>
+<div id="divError12" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg12" /></div>
+<div id="divQuestionFeedback12" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;"><input id="idGap13_0" type="text" size="10" /> - <input id="idGap13_1" type="text" size="10" /> - WON</span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel14" ><div class="panel-heading" ><b>pregunta 14</b></div><div class="panel-body" ><div id="divSuccess13" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail13" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect13" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo13" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning13" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg13" /></div>
+<div id="divError13" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg13" /></div>
+<div id="divQuestionFeedback13" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;"><input id="idGap14_0" type="text" size="10" /> - <input id="idGap14_1" type="text" size="10" /> - SPOKE</span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel15" ><div class="panel-heading" ><b>pregunta 15</b></div><div class="panel-body" ><div id="divSuccess14" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail14" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect14" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo14" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning14" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg14" /></div>
+<div id="divError14" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg14" /></div>
+<div id="divQuestionFeedback14" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;"><input id="idGap15_0" type="text" size="10" /> - BREAK - <input id="idGap15_1" type="text" size="10" /></span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel16" ><div class="panel-heading" ><b>pregunta 16</b></div><div class="panel-body" ><div id="divSuccess15" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail15" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect15" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo15" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning15" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg15" /></div>
+<div id="divError15" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg15" /></div>
+<div id="divQuestionFeedback15" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">APRENDER - <input id="idGap16_0" type="text" size="10" /> - <input id="idGap16_1" type="text" size="10" /></span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel17" ><div class="panel-heading" ><b>pregunta 17</b></div><div class="panel-body" ><div id="divSuccess16" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail16" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect16" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo16" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning16" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg16" /></div>
+<div id="divError16" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg16" /></div>
+<div id="divQuestionFeedback16" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;"><input id="idGap17_0" type="text" size="10" /> - GO - <input id="idGap17_1" type="text" size="10" /></span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel18" ><div class="panel-heading" ><b>pregunta 18</b></div><div class="panel-body" ><div id="divSuccess17" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail17" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect17" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo17" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning17" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg17" /></div>
+<div id="divError17" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg17" /></div>
+<div id="divQuestionFeedback17" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;"><input id="idGap18_0" type="text" size="10" /> - LOSE - <input id="idGap18_1" type="text" size="10" /></span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel19" ><div class="panel-heading" ><b>pregunta 19</b></div><div class="panel-body" ><div id="divSuccess18" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail18" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect18" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo18" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning18" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg18" /></div>
+<div id="divError18" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg18" /></div>
+<div id="divQuestionFeedback18" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">ESCRIBIR - <input id="idGap19_0" type="text" size="10" /> - <input id="idGap19_1" type="text" size="10" /></span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel20" ><div class="panel-heading" ><b>pregunta 20</b></div><div class="panel-body" ><div id="divSuccess19" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail19" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect19" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo19" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning19" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg19" /></div>
+<div id="divError19" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg19" /></div>
+<div id="divQuestionFeedback19" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">ABANDONAR, SALIR - <input id="idGap20_0" type="text" size="10" /> - <input id="idGap20_1" type="text" size="10" /></span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel21" ><div class="panel-heading" ><b>pregunta 21</b></div><div class="panel-body" ><div id="divSuccess20" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail20" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect20" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo20" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning20" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg20" /></div>
+<div id="divError20" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg20" /></div>
+<div id="divQuestionFeedback20" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;"><input id="idGap21_0" type="text" size="10" /> - SEE - <input id="idGap21_1" type="text" size="10" /></span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel22" ><div class="panel-heading" ><b>pregunta 22</b></div><div class="panel-body" ><div id="divSuccess21" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail21" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect21" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo21" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning21" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg21" /></div>
+<div id="divError21" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg21" /></div>
+<div id="divQuestionFeedback21" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">DORMIR - <input id="idGap22_0" type="text" size="10" /> - <input id="idGap22_1" type="text" size="10" /></span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel23" ><div class="panel-heading" ><b>pregunta 23</b></div><div class="panel-body" ><div id="divSuccess22" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail22" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect22" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo22" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning22" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg22" /></div>
+<div id="divError22" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg22" /></div>
+<div id="divQuestionFeedback22" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <span class="class_remarks" ><span><p>&nbsp;</p></span></span></div>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;"><input id="idGap23_0" type="text" size="10" /> - DO - <input id="idGap23_1" type="text" size="10" /></span></b></p></span></p></form>
+<p class="class_before_after_qst_format" ><span><p>&nbsp;</p></span></p>
+</div></div>
+<div class="panel panel-primary" id="idPanel24" ><div class="panel-heading" ><b>pregunta 24</b></div><div class="panel-body" ><div id="divSuccess23" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail23" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect23" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo23" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning23" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg23" /></div>
+<div id="divError23" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg23" /></div>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">DAR, REGALAR - <input id="idGap24_0" type="text" size="10" /> - <input id="idGap24_1" type="text" size="10" /></span></b></p></span></p></form>
+</div></div>
+<div class="panel panel-primary" id="idPanel25" ><div class="panel-heading" ><b>pregunta 25</b></div><div class="panel-body" ><div id="divSuccess24" class="alert alert-success alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta correcta</div>
+<div id="divFail24" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta incorrecta</div>
+<div id="divPartiallyCorrect24" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta parcialmente correcta</div>
+<div id="divInfo24" class="alert alert-info alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> Respuesta completa</div>
+<div id="divWarning24" class="alert alert-warning alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Cuidado¡¡</strong> <span id="idWarningMsg24" /></div>
+<div id="divError24" class="alert alert-danger alert-dismissible fade in" style="display:none" ><a class="close" data-dismiss="alert" aria-label="close" >&times;</a> <strong>Error</strong> <span id="idErrorMsg24" /></div>
+<p><span class="class_qst_format text_full_width"><p><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;">FILL THE GAPS</span></p></span></p><form><p><span class="quiz_answer_class"><p><b><span style="background-color:#FFFFFF;font-family:Verdana;font-size:12pt;"><input id="idGap25_0" type="text" size="10" /> - READ - <input id="idGap25_1" type="text" size="10" /></span></b></p></span></p></form>
+</div></div>
+
+
+        <div class="well" id="idSectionTextEpilogue" style="display:none"><span><p style="text-align:center;"><b><span style="background-color:#FFFFFF;font-family:Tahoma;font-size:14pt;">Repasa tus respuestas antes de dar por finalizado el examen. Cuando est&#233;s listo pulsa </span></b><b style="text-align:center;"><span style="color:#408080;background-color:#FFFFFF;font-family:Tahoma;font-size:16pt;">CHECK</span></b></p>    <p style="text-align:center;"><span style="color:#FF0000;background-color:#FFFFFF;font-family:Tahoma;font-size:14pt;">----------------------------------------------------------------------------------</span></p>    <p style="text-align:center;"><b><span style="color:#FF0000;background-color:#FFFFFF;font-family:Tahoma;font-size:14pt;">Cuando acabes NO CIERRES LA VENTANA DE RESULTADOS</span></b></p>    <p style="text-align:center;"><b><span style="color:#FF0000;background-color:#FFFFFF;font-family:Tahoma;font-size:14pt;">hasta que tu profesor se acerque a tomar nota</span></b><span style="text-align:center;color:#FF0000;background-color:#FFFFFF;font-family:Tahoma;font-size:14pt;">.</span></p></span></div>
+
+        <div class="panel panel-default" id="idQuizResultsPanelBottom" style="display:none">
+            <div class="panel-body">
+                <button type="button" class="btn btn-primary center-block" onclick="onQuizResultsButtonClick()">Resultado del test</button>
+            </div>
+        </div>
+
+        <div class="panel panel-default" id="idVerifyPanelBottom" style="display:none">
+            <div class="panel-body">
+                <span></span>
+                <button type="button" class="btn btn-primary pull-right" onclick="onVerifyButtonClick()">CHECK</button>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Modal -->
+    <div id="idModalNotification" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Información</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="idModalNotificationText"></p>
+                </div>
+                <div class="modal-footer">
+                    <button id="idModalNotificationCloseButton" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="idModalConfirmation" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Confirmación</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="idModalConfirmationText"></p>
+                </div>
+                <div class="modal-footer">
+                    <button id="idModalConfirmationYesButton" type="button" data-dismiss="modal" class="btn btn-primary">Sí</button>
+                    <button id="idModalConfirmationNoButton" type="button" data-dismiss="modal" class="btn">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sounds -->
+    <audio id="idCorrectAnswerSound" src="" />
+    <audio id="idWrongAnswerSound" src="" />
+    <audio id="idPartiallyCorrectAnswerSound" src="" />
+    <audio loop muted autoplay id="idBackgroundSound" src="" />
+
+    <script>
+        var header = $('#idTopBar');
+        // Get the offset position of the top bar
+        var sticky = header.offset();
+
+        // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function PageOnScroll()
+        {
+            if (window.pageYOffset > sticky.top) {
+                header.addClass("sticky");
+            }
+            else {
+                header.removeClass("sticky");
+            }
+        } 
+    </script>
+</body>
+</html>
