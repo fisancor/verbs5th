@@ -42,7 +42,7 @@ const QMAKE_SEND_WEBAPP = 4;
 const QMAKE_SEND_NODEJS = 5;
 const QMAKE_SEND_NODEJS_LOCAL = 6;  
 
-const QUIZ_KEYWORD = "R205#tNm&6Ym5PCQ";
+const QUIZ_KEYWORD = "1HvBXeMtBXEkC3z9";
 
 const USER_LOGIN_ANONYMOUS = "anonymous";
 const USER_EMAIL_ANONYMOUS = "anonymous@anonymous.nowhere";
@@ -102,7 +102,7 @@ const options =
 	author: "Fidel C. San Gregorio",
 	argument: "FILL THE GAPS WITH THE CORRECT FORMS OF THE \"IRREGULAR VERBS\"",
 	company: "Mª Auxiliadora - Lugo",
-	quiz_date: "2024-25",
+	quiz_date: "2025-26",
 	playSounds: false,
 	hasIntroText: true,
 	hasEpilogueText: true,

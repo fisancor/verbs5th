@@ -30,7 +30,7 @@ function PageLoadResult()
 	{
 		if (options.needValuateQuiz && options.warnNeedRetake && options.allowRetakeQuiz && (quiz.mark <= options.upperMarkForRetake) && (quiz.numOfRetake < options.maxNumRetake))
 		{
-			PrintWarning("Tienes que volver a tomar el cuestionario porque la calificación es menor que " + options.upperMarkForRetake, 'R');
+			PrintWarning("You have to retake the quiz because the mark is less than " + options.upperMarkForRetake, 'R');
 		}
 
 		if (options.needSaveQuiz) {
@@ -213,7 +213,7 @@ function PrintReportQuestionDetails(qstNum,question)
 
 	textHtml += "<div class='panel panel-primary'>";
 
-	htmlHeader = "<div class='panel-heading'><b>pregunta " + textToDisplay + "</b></div>";
+	htmlHeader = "<div class='panel-heading'><b>question " + textToDisplay + "</b></div>";
 	textHtml += htmlHeader;
 
 	textHtml += "<div class='panel-body'>";
@@ -225,16 +225,16 @@ function PrintReportQuestionDetails(qstNum,question)
 	}
 
 	if (question.valid === 1) {
-		resultMsg = "Respuesta correcta";
+		resultMsg = "Correct answer";
 	}
 	else if (question.valid === -1) {
-		resultMsg = "Respuesta incorrecta";
+		resultMsg = "Wrong answer";
 	}
 	else if (question.valid === 2) {
-		resultMsg = "Pregunta no evaluada";
+		resultMsg = "Question not valuated";
 	}
 	else if (question.valid === 3) {
-		resultMsg = "Respuesta parcialmente correcta";
+		resultMsg = "Partially correct answer";
 	}
 	textHtml += "<p><i>" + resultMsg + "</i></p>";
 
@@ -242,14 +242,14 @@ function PrintReportQuestionDetails(qstNum,question)
 	{
 		if (question.minScore === 0) {
 			if (question.typeOfQuestion === QMAKE_MATCHING) {
-				textHtml += "<p><i>Sentencias correctas : " + question.nScore + "/" + question.maxScore + "</i></p>";
+				textHtml += "<p><i>Right sentences : " + question.nScore + "/" + question.maxScore + "</i></p>";
 			}
 			else {
-				textHtml += "<p><i>Nota : " + question.nScore + "/" + question.maxScore + "</i></p>";
+				textHtml += "<p><i>Score : " + question.nScore + "/" + question.maxScore + "</i></p>";
 			}
 		}
 		else {
-			textHtml += "<p><i>Nota : " + question.nScore + " [" + question.minScore + " , " + question.maxScore + "]</i></p>";
+			textHtml += "<p><i>Score : " + question.nScore + " [" + question.minScore + " , " + question.maxScore + "]</i></p>";
 		}
 	}
 
@@ -309,7 +309,7 @@ function PrintReportAnswerDetails(numOfAns, typeOfQuestion, answer)
 		}
 		else
 		{
-			htmlAns += "Responder " + numOfAns;
+			htmlAns += "Answer " + numOfAns;
 		}
 		htmlAns += "</p>";
 
@@ -417,7 +417,7 @@ function PostResultsWebApp()
 
 function PostResultsSuccessCallback()
 {
-	PrintSuccess('Prueba guardada correctamente', 'R');
+	PrintSuccess('Quiz saved correctly', 'R');
 	deleteCookie("qmake.quiz");
 }
 
@@ -441,7 +441,7 @@ function PostResultsFailCallback(jqXHR, exception)
 	} else {
 		msg = 'Uncaught Error.' + jqXHR.responseText;
 	}
-	PrintError('No se pueden guardar los resultados de la prueba : ' + msg, 'R');
+	PrintError('Unable to save quiz results : ' + msg, 'R');
 }
 
 function RemoveUndefinedQuestions() {
@@ -542,13 +542,13 @@ function PostLogin(email, passhash) {
 		},
 		complete: function (xhr, textStatus) {
 			if (xhr.status === 401) {
-				PrintError('Usuario no autorizado', 'R');
+				PrintError('User unauthorized', 'R');
 			}
 			else if (xhr.status === 404) {
-				PrintError('Usuario no encontrado', 'R');
+				PrintError('User not found', 'R');
 			}
 			else if (xhr.status !== 200) {
-				PrintError('Error de inicio de sesión, http status = ' + xhr.status, 'R');
+				PrintError('Login error, http status = ' + xhr.status, 'R');
 			}
 		}
 	});

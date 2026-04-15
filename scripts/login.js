@@ -48,7 +48,7 @@ function onRegistration()
 
 	if ((!options.needSaveQuiz) || (options.saveQuizMode !== QMAKE_SEND_NODEJS && options.saveQuizMode !== QMAKE_SEND_NODEJS_LOCAL))
 	{
-		PrintError('El cuestionario no se creó con la opción habilitada: guardar en el servidor', 'X');
+		PrintError('The quiz was not created with the enabled option : saving on server', 'X');
 		return;
 	}
 
@@ -92,15 +92,15 @@ function onRegistration()
 
 	if (email === "" || pwd === "" || missingMandatoryField)
 	{
-		PrintWarning('Todos los campos con (*) son obligatorios', 'X');
+		PrintWarning('All the fields with (*) are mandatory', 'X');
 	}
 	else if (!ValidateEmail(email))
 	{
-		PrintWarning('No es una dirección de correo electrónico válida', 'X');
+		PrintWarning('Not a valid email address', 'X');
     }
 	else if (pwd !== pwd2)
 	{
-		PrintWarning('No coincide la contraseña', 'X');
+		PrintWarning('Password mismatch', 'X');
 	}
 	else
 	{
@@ -122,7 +122,7 @@ function GetCheckLogin(loginKey, loginData)
 		data: { login: loginKey },
 		success: function (msg)
 		{
-			PrintError('{LABEL_USER_ALREADY_REGISTERED}', 'X');
+			PrintError('User already registered', 'X');
 		},
 		complete: function (xhr, textStatus)
 		{
@@ -148,7 +148,7 @@ function PostRegistration(loginData)
 			PrintRegistrationSuccess();
 		},
 		error: function (msg) {
-			PrintError('Error de registro : ' + msg, 'X');
+			PrintError('Registration error : ' + msg, 'X');
 		}
 	});
 }
@@ -159,7 +159,7 @@ function onLogin()
 	{
 		if ((!options.needSaveQuiz) || (options.saveQuizMode !== QMAKE_SEND_NODEJS && options.saveQuizMode !== QMAKE_SEND_NODEJS_LOCAL))
 		{
-			PrintError('El cuestionario no se creó con la opción habilitada: guardar en el servidor', 'I');
+			PrintError('The quiz was not created with the enabled option : saving on server', 'I');
 			return;
 		}
 
@@ -181,7 +181,7 @@ function onLogin()
 		}
 		else
 		{
-			PrintError('El nombre del campo no puede estar vacío', 'I');
+			PrintError('The field name cannot be empty', 'I');
 		}
 	}
 }
@@ -202,13 +202,13 @@ function PostLogin(email, passhash)
 		complete: function (xhr, textStatus)
 		{
 			if (xhr.status === 401) {
-				PrintError('Usuario no autorizado','I');
+				PrintError('User unauthorized','I');
 			}
 			else if (xhr.status === 404) {
-				PrintError('Usuario no encontrado', 'I');
+				PrintError('User not found', 'I');
 			}
 			else if (xhr.status !== 200){
-				PrintError('Error de inicio de sesión, http status = ' + xhr.status, 'I');
+				PrintError('Login error, http status = ' + xhr.status, 'I');
 			}
 		} 
 	});
@@ -237,7 +237,7 @@ function GetCheckQuiz(quizname, email)
 			}
 			else
 			{
-				PrintWarning('Prueba ya realizada', 'I');				
+				PrintWarning('Quiz already taken', 'I');				
             }
 		},
 		complete: function (xhr, textStatus)

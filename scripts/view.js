@@ -453,7 +453,7 @@ function PrintAnsweredToAllQuestions()
 		}
 	});
 	$('#idBtnRetire').hide();
-	$('#idModalNotificationText').text('Ud contestó todas las preguntas');
+	$('#idModalNotificationText').text('You have answered all of the questions');
 	$('#idModalNotification').modal('show');
 }
 
@@ -471,7 +471,7 @@ function PrintTimeOver()
 			$('#idBtnGoToResults').show();
 		}
 	});
-	$('#idModalNotificationText').text('Se excedió en el tiempo ¡¡');
+	$('#idModalNotificationText').text('The time is over!');
 	$('#idModalNotification').modal('show');
 }
 
@@ -485,7 +485,7 @@ function PrintAskAbandonQuiz()
 		else
 			GoToPage(FINAL_PAGE_URL);
 	});
-	$('#idModalConfirmationText').text('Esta seguro?');
+	$('#idModalConfirmationText').text('Are you sure?');
 	$('#idModalConfirmation').modal('show');
 }
 
@@ -494,52 +494,52 @@ function PrintRegistrationSuccess()
 	$("#idModalNotificationCloseButton").click(function () {
 		GoToPage(INITIAL_PAGE_URL);
 	});
-	$('#idModalNotificationText').text('El registro fue exitoso');
+	$('#idModalNotificationText').text('The registration was successful');
 	$('#idModalNotification').modal('show');
 }
 
 function PrintDoneBefore(questionIndex)
 {
-	PrintWarning('¡Esta pregunda ya fué respondida¡', questionIndex);
+	PrintWarning('You have already answered the question', questionIndex);
 }
 
 function PrintQuestionTimeIsElapsed(questionIndex)
 {
-	PrintWarning('Ha transcurrido el tiempo para responder esta pregunta', questionIndex);
+	PrintWarning('Time for answering this question is elapsed', questionIndex);
 }
 
 function PrintNeedToAnswer(questionIndex)
 {
-	PrintWarning('Respuesta incompleta.', questionIndex);  // "Prima di proseguire devi rispondere alla domanda"
+	PrintWarning('The answer is incompleted. Please, choose at least one answer', questionIndex);  // "Prima di proseguire devi rispondere alla domanda"
 }
 
 function PrintNeedToAnswerAllItem(questionIndex)
 {
-	PrintWarning('Respuesta incompleta. por favor complete todos los items.', questionIndex);  // "Prima di proseguire devi rispondere al tutte le uscite"
+	PrintWarning('The answer is incompleted. Please, choose all the items', questionIndex);  // "Prima di proseguire devi rispondere al tutte le uscite"
 }
 
 function PrintNeedToAnswerCorrectly(questionIndex)
 {
-	PrintWarning('Antes del siguiente paso, debes responderlo correctamente', questionIndex);  // "Prima di proseguire devi rispondere alla domanda in modo corretto"
+	PrintWarning('Before next step, you have to answer it correctly', questionIndex);  // "Prima di proseguire devi rispondere alla domanda in modo corretto"
 }
 
 function PrintWrongKeyword(questionIndex)
 {
-	PrintError('No es posible continuar con el test', questionIndex);
+	PrintError('Unable to continue the quiz', questionIndex);
 }
 
 function PrintErrorComputeMark(questionIndex)
 {
-	PrintError('No se puede calcular el puntaje final', questionIndex);
+	PrintError('unable to compute final mark', questionIndex);
 }
 
 function PrintCopyrightMsg()
 {
-	var copyRightMsg = "El quiz fue creado ";
+	var copyRightMsg = "This quiz was created ";
 	if ((options.author !== null) && (options.author !== '')) {
-		copyRightMsg += "por " + options.author + " ";
+		copyRightMsg += "by " + options.author + " ";
 	}
-	copyRightMsg += "con QuizFaber 4.0";
+	copyRightMsg += "with QuizFaber 4.0";
 
 	$('#idCopyrightMsg').html("<I>" + copyRightMsg + "</I>");
 }
@@ -612,7 +612,7 @@ function ShuffleQuestionsSamePage()
 		idPanelQuest = "#idPanel" + nQuest;
 		
 		newContent = fromContent[quiz.ordineDomande[i]];
-		newContent = newContent.replace("<b>pregunta " + nNewQuest + "</b>", "<b>pregunta " + nQuest + "</b>")
+		newContent = newContent.replace("<b>question " + nNewQuest + "</b>", "<b>question " + nQuest + "</b>")
 
 		$(idPanelQuest).html(newContent);
 	}

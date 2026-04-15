@@ -14,7 +14,7 @@
 // - GetSelextedItemRight()
 //=========================================
 
-const textSelect = "Seleccionar";
+const textSelect = "Select";
 
 // ---------------------------------------------
 // Genera una sequenza casuale di numeri interi
